@@ -53,11 +53,11 @@ int main(int argc, char** argv) {
 			}
 		}
 		else {
-			cout << "Such parameters do not exist. Try \"-mode FilePointer\" or \"-mode FileStream\"" << endl;
+			cout << "Such parameters do not exist. Try \"-mode FilePointer\" \nor \"-mode FileStream\"" << endl;
 		}
 	}
 	else {
-		cout << "Error. Try running the program with parameter \"-mode FilePointer\" or \"-mode FileStream\"" << endl;
+		cout << "Error. Try running the program with parameter \"-mode FilePointer\" \nor \"-mode FileStream\"" << endl;
 	}
 
 	return 0;
