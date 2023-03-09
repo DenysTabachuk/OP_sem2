@@ -122,7 +122,6 @@ int FP_is_quadratic_equation(char* str) {
 	if (FP_count_num_of(equation, '*', lenght) > 2 || FP_count_num_of(equation, '=', lenght) > 1 || FP_count_num_of(equation, 'x', lenght) > 2)
 		return 0;
 
-	cout << "+" << endl;
 	return 1;
 }
 
@@ -161,15 +160,15 @@ void FP_connet_the_words(char* sorted_str, char** words, int count) {
 		strcpy(&sorted_str[pos], words[i]);
 		pos += strlen(words[i]);
 		int nextPos = pos;
-		while (sorted_str[nextPos] == ' ') { // äîäàòè íàñòóïíèé ñèìâîë, ÿêùî öå íå ğîçä³ëüíèê
+		while (sorted_str[nextPos] == ' ') { // Ã¤Ã®Ã¤Ã Ã²Ã¨ Ã­Ã Ã±Ã²Ã³Ã¯Ã­Ã¨Ã© Ã±Ã¨Ã¬Ã¢Ã®Ã«, Ã¿ÃªÃ¹Ã® Ã¶Ã¥ Ã­Ã¥ Ã°Ã®Ã§Ã¤Â³Ã«Ã¼Ã­Ã¨Ãª
 			sorted_str[pos] = sorted_str[nextPos];
 			pos++;
 			nextPos++;
 		}
-		sorted_str[pos] = ' '; // äîäàòè ïğîá³ë ï³ñëÿ ñëîâà
+		sorted_str[pos] = ' '; // Ã¤Ã®Ã¤Ã Ã²Ã¨ Ã¯Ã°Ã®Ã¡Â³Ã« Ã¯Â³Ã±Ã«Ã¿ Ã±Ã«Ã®Ã¢Ã 
 		pos++;
 	}
-	sorted_str[pos - 1] = '\0'; // çàì³íèòè îñòàíí³é ïğîá³ë íóëü-ñèìâîëîì
+	sorted_str[pos - 1] = '\0'; // Ã§Ã Ã¬Â³Ã­Ã¨Ã²Ã¨ Ã®Ã±Ã²Ã Ã­Ã­Â³Ã© Ã¯Ã°Ã®Ã¡Â³Ã« Ã­Ã³Ã«Ã¼-Ã±Ã¨Ã¬Ã¢Ã®Ã«Ã®Ã¬
 
 
 }
@@ -179,9 +178,9 @@ void FP_sort_words_by_length(char* str) {
 	char* word;
 	char* words[100];
 	char sorted_str[200];
-	int count = FP_split_string(str, words, 100); // ğîçáèâàş ğÿäîê íà ñëîâà
-	FP_insertion_sort(words, count); // â³ñäîğòóâàòè ñëîâà
-	FP_connet_the_words(sorted_str, words, count); // çíîâó ğîáëş ğÿäîê ç³ ñë³â
+	int count = FP_split_string(str, words, 100); // Ã°Ã®Ã§Ã¡Ã¨Ã¢Ã Ã¾ Ã°Ã¿Ã¤Ã®Ãª Ã­Ã  Ã±Ã«Ã®Ã¢Ã 
+	FP_insertion_sort(words, count); // Ã¢Â³Ã±Ã¤Ã®Ã°Ã²Ã³Ã¢Ã Ã²Ã¨ Ã±Ã«Ã®Ã¢Ã 
+	FP_connet_the_words(sorted_str, words, count); // Ã§Ã­Ã®Ã¢Ã³ Ã°Ã®Ã¡Ã«Ã¾ Ã°Ã¿Ã¤Ã®Ãª Ã§Â³ Ã±Ã«Â³Ã¢
 	strcpy(str, sorted_str);
 }
 
